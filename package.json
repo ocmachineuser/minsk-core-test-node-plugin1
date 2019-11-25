@@ -1,0 +1,30 @@
+{
+  "name": "minsk-core-test-node-plugin1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "mkdirp build && cp file.js build/file.js",
+    "package": "grails-plugin-package",
+    "grails-plugin-package": "npm run build && grails-plugin-package",
+    "grails-plugin-install": "npm run grails-plugin-package && grails-plugin-install",
+    "grails-plugin-deploy": "npm run grails-plugin-package && grails-plugin-deploy",
+    "grails-plugin-release": "npm run grails-plugin-package -- --release && grails-plugin-install --release && grails-plugin-deploy --release"
+  },
+  "author": "Egor Stambakio egor.stambakio@opuscapita.com",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@opuscapita/npm-scripts": "2.0.0",
+    "mkdirp": "0.5.1"
+  },
+  "grails": {
+    "groupId": "com.jcatalog.grailsplugins",
+    "resources": {
+      "simple-resource-module": {
+        "files": {
+          "file.js": "file.js"
+        }
+      }
+    }
+  }
+}
